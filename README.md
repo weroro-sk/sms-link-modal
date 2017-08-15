@@ -131,3 +131,40 @@ eg. [tag name] .classname
         ├─[a]    .rs-sms-modal-form-button      /* second child */
         └─[span] .rs-sms-modal-close-button     /* second child */
 ```
+# API
+```javascript
+smsLinkModal.getSmsNumber(); // returns actual sms number
+```
+```javascript
+smsLinkModal.getSmsText(); // returns actual sms text
+```
+```javascript
+smsLinkModal.getSmsElements(); // Returns all found sms: href elements
+```
+```javascript
+smsLinkModal.getModal(); // Returns modal element or null
+```
+
+#### Other features
+
+```javascript
+smsLinkModal.addClass(HTMLElement, className); // Adds CSS class
+
+smsLinkModal.removeClass(HTMLElement, className); // Removes CSS class
+
+smsLinkModal.empty(customVar); // Is variable empty? | Returns true / false
+
+smsLinkModal.scrollTo(HTMLElement); // Animated scrolling to element.
+
+smsLinkModal.getData(HTMLElement, 'my-custom-attr'); // <div data-my-custom-attr="hello"></div>
+
+smsLinkModal.rTrim(String); // Removes unnecessary spaces from string.
+
+smsLinkModal.getHighestZIndex(); // Returns highest z-index value in document.
+
+smsLinkModal.appendHtml(htmlString, containerElement); // Appends html in document
+
+smsLinkModal.capitalize(String); // Uppercase first letter.
+
+smsLinkModal.underscoreCreator(String); // Transforms camelcase string to underscore
+```

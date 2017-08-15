@@ -39,7 +39,7 @@ class SmsLink {
      * @param {string} [inputString]
      * @param {Number} [type]
      * @param {Array} [args]
-     * @returns {*}
+     * @returns {SmsLink|*}
      */
     logger(inputString, type, args) {
         inputString = inputString || '';
@@ -91,18 +91,6 @@ class SmsLink {
     }
 
     /**
-     * @param {Number} version
-     * @returns {SmsLink}
-     */
-    setMinIOSVersion(version) {
-        if (!this.empty(version) &&
-            !isNaN(parseInt(version))) {
-            this.minIOSVersion = parseInt(version);
-        }
-        return this;
-    }
-
-    /**
      * @returns {Number}
      */
     getMinIOSVersion() {
@@ -139,7 +127,7 @@ class SmsLink {
     }
 
     /**
-     * @description Returns true if detect Facebook APP or false
+     * @description Returns true if detect Facebook APP web browser or false
      *
      * @returns {boolean}
      */
