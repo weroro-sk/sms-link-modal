@@ -1,0 +1,45 @@
+html, body {
+    margin: 15px 0 0;
+    padding: 0;
+    background: #eee;
+    font-family: sans-serif
+}
+
+.sms-buton {
+    display: block;
+    padding: 20px;
+    margin: 10px;
+    color: white;
+    border: 1px dotted grey;
+    font-weight: 700
+}
+
+h2, p {
+    text-align: center
+}
+
+.red {
+    background: red
+}
+
+.green {
+    background: green
+}
+
+.blue {
+    background: blue
+}
+
+.info {
+    margin-top: 30px
+}
+
+button {
+    display: block;
+    width: 200px;
+    padding: 10px;
+    margin: auto;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer
+}

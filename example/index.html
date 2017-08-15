@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sms-Link-Modal example</title>
+    <meta name="viewport" id="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=2.0, user-scalable=yes"/>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="../app/sms-link-modal-style.css">
+    <script src="dependencies/sms-link.js"></script>
+    <script src="../app/sms-link-modal.js"></script>
+</head>
+<body>
+
+<h2>The SMS: protocol works correctly only on mobile device.</h2>
+
+<a href="sms:098732165?body=You clicked on the Red link." class="red sms-buton">Red SMS Link</a>
+<a href="sms:+421987321653?body=You clicked on the Green link." class="green sms-buton">Green SMS Link</a>
+<a href="sms:00421987321652?body=You clicked on the Blue link." class="blue sms-buton">Blue SMS Link</a>
+<hr>
+<button onclick="smsLinkModal.show()">Show modal</button>
+
+<p class="info"></p>
+
+<script>
+
+    let smsLinkModal = new SmsLinkModal(true); // true = debug mode
+
+    smsLinkModal.setDefaultSeparator('#'); // set # as separator
+
+//    smsLinkModal.ignoreFacebookApp();
+//    smsLinkModal.ignoreTablets();
+
+    smsLinkModal
+        .setFormID('my-form')
+        .setSms({
+            number: '+421987399653',
+            text: 'Hello, this is modal :)'
+        })
+        .linkFix((status) => {
+            let info = document.querySelector('.info');
+            let infoText = 'The Document has not sms: links or your operating system is unsupported.';
+            if (status) {
+                infoText = 'The Document has sms: links and they was fixed.';
+            }
+            console.log(infoText);
+            info.innerHTML = infoText;
+        })
+        .render();
+
+    smsLinkModal.customCallback('outer_click', () => {
+        console.log('modal was closed by outer click');
+    });
+
+    console.log(smsLinkModal.getCallbackIDList());
+    console.log(smsLinkModal.getCallbackIDList(true));
+
+</script>
