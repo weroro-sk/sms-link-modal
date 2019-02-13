@@ -3,6 +3,8 @@ Show modal with sms send button.
 
 dependencies: https://github.com/weroro-sk/sms-link
 
+Live preview: https://weroro-sk.github.io/sms-link-modal/example/
+
 ---
 usage: 
 ```javascript
